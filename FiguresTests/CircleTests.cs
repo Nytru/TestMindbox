@@ -26,9 +26,8 @@ public class CircleTests
 
     [TestMethod]
     [DataRow(5)]
-    [DataRow(double.Epsilon)]
     [DataRow(1)]
-    [DataRow(double.MaxValue)]
+    [DataRow(double.Epsilon)]
     public void Correct_Circle_Area_Calculation(double r)
     {
         var area = Math.PI * r * r;

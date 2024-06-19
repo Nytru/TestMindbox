@@ -23,6 +23,7 @@ public record Triangle : IFigure
         A = a;
         B = b;
         C = c;
+
         var p = (A + B + C) / 2;
         Area = Math.Sqrt(p * (p - A) * (p - B) * (p - C));
     }
