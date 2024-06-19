@@ -18,18 +18,12 @@ public record Circle : IFigure
     private static void ValidateAndThrow(double radius)
     {
         if (radius <= 0)
-        {
             throw new ArgumentException("radius must be grater than zero", nameof(radius));
-        }
 
         if (double.IsInfinity(radius))
-        {
             throw new ArgumentException("side of triangle must not be an infinite", nameof(radius));
-        }
 
         if (double.IsNaN(radius))
-        {
             throw new ArgumentException("side of triangle must be a number", nameof(radius));
-        }
     }
 }

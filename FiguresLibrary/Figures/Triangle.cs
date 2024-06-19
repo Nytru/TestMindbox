@@ -36,36 +36,24 @@ public record Triangle : IFigure
         ValidateAndThrow(c);
 
         if (a + b <= c)
-        {
             throw new ArgumentException(errorMessage);
-        }
 
         if (a + c <= b)
-        {
             throw new ArgumentException(errorMessage);
-        }
 
         if (b + c <= a)
-        {
             throw new ArgumentException(errorMessage);
-        }
     }
 
     private static void ValidateAndThrow(double side)
     {
         if (side <= 0)
-        {
             throw new ArgumentException("side of triangle must be grater than zero", nameof(side));
-        }
 
         if (double.IsInfinity(side))
-        {
             throw new ArgumentException("side of triangle must not be an infinite", nameof(side));
-        }
 
         if (double.IsNaN(side))
-        {
             throw new ArgumentException("side of triangle must be a number", nameof(side));
-        }
     }
 }
