@@ -33,4 +33,19 @@ public class TriangleTest
         var triangle = new Triangle(a, b, c);
         Assert.IsTrue(triangle.IsRight);
     }
+
+    [TestMethod]
+    [DataRow(3, 4, 5)]
+    [DataRow(double.Epsilon, double.Epsilon, double.Epsilon)]
+    [DataRow(1, 1, 1)]
+    [DataRow(double.MaxValue, double.MaxValue, double.MaxValue)]
+    public void Correct_Triangle_Area_Calculation(double a, double b, double c)
+    {
+        var p = (a + b + c) / 2;
+        var area = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+
+        var triangle = new Triangle(a, b, c);
+
+        Assert.AreEqual(triangle.Area, area);
+    }
 }
